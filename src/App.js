@@ -9,7 +9,7 @@ export default class App extends React.Component {
     tasks: [ 
       { 
         id: 1, 
-        name: 'Do a shit',
+        name: 'Do Something',
         date: '2021-09-10',
         done: false 
       }, 
@@ -56,7 +56,8 @@ export default class App extends React.Component {
     })
   }
 
-  toggleForm = () => {
+  toggleForm = (e) => {
+    e.preventDefault();
     this.setState({show_form: !this.state.show_form})
   }
 

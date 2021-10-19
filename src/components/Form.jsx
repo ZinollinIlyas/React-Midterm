@@ -40,9 +40,9 @@ class Form extends React.Component {
         return (
 
             <form method="get" onSubmit={this.onSubmit}>
-                <input type="text" placeholder="Type name of Task" id="text" onChange={this.onTextChange}/>
-                <input type="date" id="date" onChange={this.onDateChange}/>
-                <input type="submit" value="Add task"/>
+                <p><input type="text" placeholder="Type name of Task" id="text" onChange={this.onTextChange}/></p>
+                <p><input type="date" id="date" onChange={this.onDateChange}/></p>
+                <p className="add-task"><input type="submit" value="Add task"/></p>
             </form>
 
         )

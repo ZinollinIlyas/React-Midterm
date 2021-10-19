@@ -6,7 +6,7 @@ export default class Header extends Component {
         return ( 
             <header> 
                 <h1>Task App</h1>
-                <button onClick={this.props.onClick}>Add new Task</button> 
+                <a href="#" className="add-task-toggle" onClick={this.props.onClick}>Add new task</a>
             </header> 
         ) 
     } 
