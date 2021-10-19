@@ -11,12 +11,13 @@ export default class Task extends Component {
     } 
  
     render() { 
-        const {id, name} = this.props.task 
+        const {id, name, date} = this.props.task 
  
         return ( 
             <div style={this.getStyle()}> 
                 <input type='checkbox' onChange={this.props.completed.bind(this, id)}/> 
                 <p>{ name }</p> 
+                <p>{date}</p>
                 <button style={btnStyle} onClick={() => this.props.onDelete(id)}>Delete</button> 
             </div> 
         ) 

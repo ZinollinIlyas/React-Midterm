@@ -4,7 +4,7 @@ import React from "react";
 class Form extends React.Component {
     state = {
         text: '',
-        date: ''
+        date: '',
     }
 
     onAdd = this.props.onAdd
@@ -19,15 +19,32 @@ class Form extends React.Component {
         console.log(this.state.date)
     }
     
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        let text_input = document.getElementById('text');
+        let date_input = document.getElementById('date');
+        if (!this.state.text || !this.state.date){
+            alert("Inputs must not be empty")
+        } else {
+            const {text, date} = this.state;
+            text_input.value = '';
+            date_input.value = '';
+            const createTask = this.props.onCreateTask;
+            createTask(text, date)
+        }
+        
+    }
+
     render(){
         return (
-            <div>
-                <form method="get">
-                    <input type="text" placeholder="Type name of Task" onChange={this.onTextChange}/>
-                    <input type="date" onChange={this.onDateChange}/>
-                    <input type="submit" value="Add task"/>
-                </form>
-            </div>
+
+            <form method="get" onSubmit={this.onSubmit}>
+                <input type="text" placeholder="Type name of Task" id="text" onChange={this.onTextChange}/>
+                <input type="date" id="date" onChange={this.onDateChange}/>
+                <input type="submit" value="Add task"/>
+            </form>
+
         )
     }
 }
