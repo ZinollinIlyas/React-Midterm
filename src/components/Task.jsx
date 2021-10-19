@@ -17,7 +17,7 @@ export default class Task extends Component {
             <div style={this.getStyle()}> 
                 <input type='checkbox' onChange={this.props.completed.bind(this, id)}/> 
                 <p>{ name }</p> 
-                <button style={btnStyle}>Delete</button> 
+                <button style={btnStyle} onClick={() => this.props.onDelete(id)}>Delete</button> 
             </div> 
         ) 
     } 

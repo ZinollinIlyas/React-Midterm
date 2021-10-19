@@ -31,12 +31,19 @@ export default class App extends React.Component {
       return task 
     })}) 
   } 
+
+  //Delete task 
+  deleteTask = (id) =>{
+    this.setState({ 
+      tasks: this.state.tasks.filter(task => task.id !== id)
+    })
+  }
  
   render() { 
     return ( 
       <React.Fragment> 
         <Header /> 
-        <Tasks tasks={this.state.tasks} taskCompleted={this.taskCompleted}/> 
+        <Tasks tasks={this.state.tasks} taskCompleted={this.taskCompleted} onDelete={this.deleteTask}/> 
       </React.Fragment> 
     ) 
   } 
